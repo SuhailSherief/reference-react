@@ -7,7 +7,10 @@ function Todo({title}) {
 
     function deleteHandler()
     {
-         setModal(true);
+      setModal(true);
+    }
+    function closeModalHandler(){
+      setModal(false)
     }
 
   return (
@@ -16,8 +19,8 @@ function Todo({title}) {
         <div className="actions">
           <button className="btn" onClick={deleteHandler}>Delete</button>
         </div>
-        { showModal && <Modal /> }
-        { showModal && <Backdrop/> }
+        { showModal && <Modal cancel={closeModalHandler} confirm={closeModalHandler} /> }
+        { showModal && <Backdrop closeModal={closeModalHandler} /> }
     </div>
   )
 }

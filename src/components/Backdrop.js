@@ -1,6 +1,6 @@
-function Backdrop() {
+function Backdrop({closeModal}) {
   return (
-    <div className="backdrop" />
+    <div className="backdrop" onClick={closeModal}/>
   )
 }
 
